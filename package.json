@@ -1,16 +1,17 @@
 {
-  "name": "its_my_india",
+  "name": "its_my_India",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "gh-pages": "^6.3.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.0.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
+    "dev": "webpack serve --config webpack.config.js --mode development",
     "start": "react-scripts start",
+    "serve": "webpack serve",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -37,10 +38,18 @@
     "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
+    "css-loader": "^7.1.2",
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.3.0",
-    "typescript-eslint": "^8.37.0"
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.37.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   },
   "homepage": "https://mukulmj.github.io/its_my_India"
 }
