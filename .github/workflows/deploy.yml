@@ -21,6 +21,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Lint code
+        run: npm run lint
+        continue-on-error: false
+
+      - name: Type check
+        run: npm run tsc --noEmit
+        continue-on-error: false
+
+      - name: Run tests
+        run: npm test -- --watchAll=false
+        continue-on-error: false
+
       - name: Build
         run: npm run build
 
