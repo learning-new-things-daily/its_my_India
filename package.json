@@ -9,6 +9,7 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
+    "install": "npm install --legacy-peer-deps",
     "dev": "webpack serve --config webpack.config.js --mode development",
     "start": "react-scripts start",
     "serve": "webpack serve",
@@ -17,7 +18,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint src",
+    "lint": "eslint src --ext .ts,.tsx",
     "tsc": "tsc"
   },
   "browserslist": {
