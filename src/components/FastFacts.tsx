@@ -30,6 +30,30 @@ const content = {
   ],
 };
 
+const nationalSymbols = {
+  en: [
+    { label: "National Animal", value: "Bengal Tiger" },
+    { label: "National Bird", value: "Indian Peacock" },
+    { label: "National Flower", value: "Lotus" },
+    { label: "National Tree", value: "Banyan" },
+    { label: "National Fruit", value: "Mango" },
+    { label: "National Sport", value: "Hockey" },
+  ],
+  hi: [
+    { label: "राष्ट्रीय पशु", value: "बंगाल टाइगर" },
+    { label: "राष्ट्रीय पक्षी", value: "भारतीय मोर" },
+    { label: "राष्ट्रीय फूल", value: "कमल" },
+    { label: "राष्ट्रीय वृक्ष", value: "बरगद" },
+    { label: "राष्ट्रीय फल", value: "आम" },
+    { label: "राष्ट्रीय खेल", value: "हॉकी" },
+  ],
+};
+
+const festivals = {
+  en: ["Diwali", "Holi", "Eid", "Christmas", "Navratri"],
+  hi: ["दीवाली", "होली", "ईद", "क्रिसमस", "नवरात्रि"],
+};
+
 const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
   const [data, setData] = useState<CountryData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -100,6 +124,24 @@ const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
         <ul>
           {content[lang].map((fact, idx) => (
             <li key={idx}>{fact}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>{lang === "en" ? "National Symbols" : "राष्ट्रीय प्रतीक"}</h2>
+        <ul>
+          {nationalSymbols[lang].map((symbol, idx) => (
+            <li key={idx}>
+              <strong>{symbol.label}:</strong> {symbol.value}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>{lang === "en" ? "Festivals" : "त्योहार"}</h2>
+        <ul>
+          {festivals[lang].map((festival, idx) => (
+            <li key={idx}>{festival}</li>
           ))}
         </ul>
       </div>
