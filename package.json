@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "ajv": "6.12.6",
+    "ajv-keywords": "3.5.2",
     "gh-pages": "^6.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -11,9 +13,9 @@
   "scripts": {
     "setup": "npm install --legacy-peer-deps",
     "dev": "webpack serve --config webpack.config.js --mode development",
-    "start": "react-scripts start",
+    "start": "webpack serve --config webpack.config.js",
     "serve": "webpack serve",
-    "build": "react-scripts build",
+    "build": "webpack --config webpack.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
