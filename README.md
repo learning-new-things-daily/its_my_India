@@ -9,6 +9,10 @@ npm install
 npm start
 ```
 
+```bash
+npm install --save gh-pages
+```
+
 ## Features
 
 - Modular sections (About, Geography, Culture, Landmarks, Fast Facts, News)
