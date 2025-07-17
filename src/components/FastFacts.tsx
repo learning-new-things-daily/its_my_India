@@ -13,7 +13,11 @@ type CountryData = {
   languages: Record<string, string>;
 };
 
-const FastFacts: React.FC = () => {
+type FastFactsProps = {
+  lang: "en" | "hi";
+};
+
+const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
   const [data, setData] = useState<CountryData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);

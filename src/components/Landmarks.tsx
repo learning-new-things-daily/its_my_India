@@ -1,7 +1,11 @@
 import React from "react";
 import Section from "./Section";
 
-const Landmarks: React.FC = () => (
+type LandmarksProps = {
+  lang: "en" | "hi";
+};
+
+const Landmarks: React.FC<LandmarksProps> = ({ lang }) => (
   <Section title="Landmarks">
     <ul>
       <li>Taj Mahal</li>

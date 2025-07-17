@@ -1,7 +1,11 @@
 import React from "react";
 import Section from "./Section";
 
-const Geography: React.FC = () => (
+type GeographyProps = {
+  lang: "en" | "hi";
+};
+
+const Geography: React.FC<GeographyProps> = ({ lang }) => (
   <Section title="Geography">
     <ul>
       <li>Location: South Asia</li>

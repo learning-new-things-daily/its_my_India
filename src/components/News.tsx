@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import Section from "./Section";
 
 type NewsArticle = { title: string; url: string };
-type NewsProps = { apiKey?: string };
+type NewsProps = {
+  apiKey: string;
+  lang: "en" | "hi";
+};
 
-const News: React.FC<NewsProps> = ({ apiKey }) => {
+const News: React.FC<NewsProps> = ({ apiKey, lang }) => {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);

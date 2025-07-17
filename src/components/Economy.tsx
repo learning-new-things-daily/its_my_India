@@ -2,7 +2,11 @@
 import React from "react";
 import Section from "./Section";
 
-const Economy: React.FC = () => (
+type EconomyProps = {
+  lang: "en" | "hi";
+};
+
+const Economy: React.FC<EconomyProps> = ({ lang }) => (
   <Section title="Economy">
     <ul>
       {/* eslint-disable-next-line react/no-unescaped-entities */}

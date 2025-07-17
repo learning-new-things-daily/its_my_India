@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-    #   - name: Lint code
-    #     run: npm run lint || true
+      - name: Lint code
+        run: npm run lint || true
 
       - name: Type check
         run: npm run tsc --noEmit

@@ -1,7 +1,11 @@
 import React from "react";
 import Section from "./Section";
 
-const Languages: React.FC = () => (
+type LanguagesProps = {
+  lang: "en" | "hi";
+};
+
+const Languages: React.FC<LanguagesProps> = ({ lang }) => (
   <Section title="Languages">
     <p>
       India has 22 officially recognized languages and hundreds of regional languages and dialects. Hindi and English are the official languages of the central government.
