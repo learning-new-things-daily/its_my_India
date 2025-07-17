@@ -1,20 +1,37 @@
 import React from "react";
-import Section from "./Section";
 
 type LandmarksProps = {
   lang: "en" | "hi";
 };
 
+const content = {
+  en: {
+    title: "Landmarks",
+    items: [
+      "Taj Mahal",
+      "Qutub Minar",
+      "Gateway of India",
+      "Red Fort"
+    ]
+  },
+  hi: {
+    title: "प्रसिद्ध स्थल",
+    items: [
+      "ताज महल",
+      "कुतुब मीनार",
+      "गेटवे ऑफ इंडिया",
+      "लाल किला"
+    ]
+  }
+};
+
 const Landmarks: React.FC<LandmarksProps> = ({ lang }) => (
-  <Section title="Landmarks">
+  <div>
+    <h2>{content[lang].title}</h2>
     <ul>
-      <li>Taj Mahal</li>
-      <li>Qutub Minar</li>
-      <li>Gateway of India</li>
-      <li>Red Fort</li>
-      <li>India Gate</li>
+      {content[lang].items.map((item, idx) => <li key={idx}>{item}</li>)}
     </ul>
-  </Section>
+  </div>
 );
 
 export default Landmarks;

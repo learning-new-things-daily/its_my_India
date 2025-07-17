@@ -1,16 +1,25 @@
 import React from "react";
-import Section from "./Section";
 
 type CultureProps = {
   lang: "en" | "hi";
 };
 
+const content = {
+  en: {
+    title: "Culture",
+    desc: "India's culture is very diverse and rich."
+  },
+  hi: {
+    title: "संस्कृति",
+    desc: "भारत की संस्कृति बहुत विविध और समृद्ध है।"
+  }
+};
+
 const Culture: React.FC<CultureProps> = ({ lang }) => (
-  <Section title="Culture & Traditions">
-    <p>
-      India is known for its diverse culture, languages, religions, festivals, music, dance, and cuisine. Major festivals include Diwali, Holi, Eid, and Christmas.
-    </p>
-  </Section>
+  <div>
+    <h2>{content[lang].title}</h2>
+    <p>{content[lang].desc}</p>
+  </div>
 );
 
 export default Culture;

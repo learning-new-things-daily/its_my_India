@@ -17,6 +17,19 @@ type FastFactsProps = {
   lang: "en" | "hi";
 };
 
+const content = {
+  en: [
+    "Population: 1.4+ billion",
+    "States: 28, Union Territories: 8",
+    "Capital: New Delhi",
+  ],
+  hi: [
+    "जनसंख्या: 1.4+ अरब",
+    "राज्य: 28, केंद्र शासित प्रदेश: 8",
+    "राजधानी: नई दिल्ली",
+  ],
+};
+
 const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
   const [data, setData] = useState<CountryData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -82,6 +95,14 @@ const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
           </ul>
         </div>
       )}
+      <div>
+        <h2>{lang === "en" ? "Fast Facts" : "त्वरित तथ्य"}</h2>
+        <ul>
+          {content[lang].map((fact, idx) => (
+            <li key={idx}>{fact}</li>
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 };
