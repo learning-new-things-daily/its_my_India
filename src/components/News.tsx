@@ -31,9 +31,9 @@ const News: React.FC<NewsProps> = ({ apiKey, lang }) => {
 
   if (!apiKey) return null;
   return (
-    <Section title="Latest News">
-      {loading && <p>Loading...</p>}
-      {error && <p>News unavailable.</p>}
+    <Section title={lang === "hi" ? "ताज़ा समाचार" : "Latest News"}>
+      {loading && <p>{lang === "hi" ? "लोड हो रहा है..." : "Loading..."}</p>}
+      {error && <p>{lang === "hi" ? "समाचार उपलब्ध नहीं है।" : "News unavailable."}</p>}
       <ul>
         {articles.map((a, i) => (
           <li key={i}>
