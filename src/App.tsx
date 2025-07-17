@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import About from "./components/About";
 import Geography from "./components/Geography";
@@ -20,13 +20,25 @@ const NAV_ITEMS = [
   { id: "news", label: "News" }
 ];
 
+const content = {
+  en: {
+    title: "It's My India",
+    description: "Welcome to a colorful and diverse nation. Explore the beauty, culture, and heritage of India!"
+  },
+  hi: {
+    title: "मेरा भारत",
+    description: "एक रंगीन और विविध देश में आपका स्वागत है। भारत की सुंदरता, संस्कृति और विरासत का अन्वेषण करें!"
+  }
+};
+
 const App: React.FC = () => {
+  const [lang, setLang] = useState<'en' | 'hi'>('en');
   const newsApiKey = ""; // Add your NewsAPI key if needed
 
   return (
     <div className="container">
       <header>
-        <h1>It's My India 🇮🇳</h1>
+        <h1>{content[lang].title} 🇮🇳</h1>
         <nav>
           {NAV_ITEMS.map(item => (
             <a key={item.id} href={`#${item.id}`}>
@@ -34,6 +46,10 @@ const App: React.FC = () => {
             </a>
           ))}
         </nav>
+        <div className="language-toggle">
+          <button onClick={() => setLang('en')}>English</button>
+          <button onClick={() => setLang('hi')}>हिन्दी</button>
+        </div>
       </header>
       <main>
         <section id="about"><About /></section>
