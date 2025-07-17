@@ -32,21 +32,21 @@ const content = {
 
 const nationalSymbols = {
   en: [
-    { label: "National Animal", value: "Bengal Tiger" },
-    { label: "National Bird", value: "Indian Peacock" },
-    { label: "National Flower", value: "Lotus" },
-    { label: "National Tree", value: "Banyan" },
-    { label: "National Fruit", value: "Mango" },
-    { label: "National Sport", value: "Hockey" },
+    { label: "National Animal", value: "Bengal Tiger", link: "https://en.wikipedia.org/wiki/Bengal_tiger" },
+    { label: "National Bird", value: "Indian Peacock", link: "https://en.wikipedia.org/wiki/Indian_peafowl" },
+    { label: "National Flower", value: "Lotus", link: "https://en.wikipedia.org/wiki/Nelumbo_nucifera" },
+    { label: "National Tree", value: "Banyan", link: "https://en.wikipedia.org/wiki/Ficus_benghalensis" },
+    { label: "National Fruit", value: "Mango", link: "https://en.wikipedia.org/wiki/Mango" },
+    { label: "National Sport", value: "Hockey", link: "https://en.wikipedia.org/wiki/Field_hockey_in_India" }
   ],
   hi: [
-    { label: "राष्ट्रीय पशु", value: "बंगाल टाइगर" },
-    { label: "राष्ट्रीय पक्षी", value: "भारतीय मोर" },
-    { label: "राष्ट्रीय फूल", value: "कमल" },
-    { label: "राष्ट्रीय वृक्ष", value: "बरगद" },
-    { label: "राष्ट्रीय फल", value: "आम" },
-    { label: "राष्ट्रीय खेल", value: "हॉकी" },
-  ],
+    { label: "राष्ट्रीय पशु", value: "बंगाल टाइगर", link: "https://hi.wikipedia.org/wiki/बंगाल_बाघ" },
+    { label: "राष्ट्रीय पक्षी", value: "भारतीय मोर", link: "https://hi.wikipedia.org/wiki/भारतीय_मोर" },
+    { label: "राष्ट्रीय फूल", value: "कमल", link: "https://hi.wikipedia.org/wiki/कमल" },
+    { label: "राष्ट्रीय वृक्ष", value: "बरगद", link: "https://hi.wikipedia.org/wiki/बरगद" },
+    { label: "राष्ट्रीय फल", value: "आम", link: "https://hi.wikipedia.org/wiki/आम" },
+    { label: "राष्ट्रीय खेल", value: "हॉकी", link: "https://hi.wikipedia.org/wiki/हॉकी" }
+  ]
 };
 
 const festivals = {
