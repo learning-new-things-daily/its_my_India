@@ -52,14 +52,14 @@ const App: React.FC = () => {
         </div>
       </header>
       <main>
-        <section id="about"><About /></section>
-        <section id="geography"><Geography /></section>
-        <section id="culture"><Culture /></section>
-        <section id="landmarks"><Landmarks /></section>
-        <section id="fastfacts"><FastFacts /></section>
-        <section id="economy"><Economy /></section>
-        <section id="languages"><Languages /></section>
-        <section id="news"><News apiKey={newsApiKey} /></section>
+        <section id="about"><About lang={lang} /></section>
+        <section id="geography"><Geography lang={lang} /></section>
+        <section id="culture"><Culture lang={lang} /></section>
+        <section id="landmarks"><Landmarks lang={lang} /></section>
+        <section id="fastfacts"><FastFacts lang={lang} /></section>
+        <section id="economy"><Economy lang={lang} /></section>
+        <section id="languages"><Languages lang={lang} /></section>
+        <section id="news"><News apiKey={newsApiKey} lang={lang} /></section>
       </main>
       <footer>
         <small>Data from restcountries.com &amp; newsapi.org &mdash; Expandable &amp; open source</small>
