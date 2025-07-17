@@ -9,7 +9,7 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "install": "npm install --legacy-peer-deps",
+    "setup": "npm install --legacy-peer-deps",
     "dev": "webpack serve --config webpack.config.js --mode development",
     "start": "react-scripts start",
     "serve": "webpack serve",
