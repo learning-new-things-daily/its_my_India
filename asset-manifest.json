@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/its_my_India/static/css/main.4feb373c.css",
+    "main.js": "/its_my_India/static/js/main.ea392bba.js",
+    "index.html": "/its_my_India/index.html",
+    "main.4feb373c.css.map": "/its_my_India/static/css/main.4feb373c.css.map",
+    "main.ea392bba.js.map": "/its_my_India/static/js/main.ea392bba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4feb373c.css",
+    "static/js/main.ea392bba.js"
+  ]
+}
