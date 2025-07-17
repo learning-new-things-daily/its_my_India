@@ -17,16 +17,26 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'  # ⚡ cache node_modules
 
       - name: Install dependencies
-        run: npm ci || npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
-      - name: Build project
+      - name: Lint code
+        run: npm run lint || true
+
+      - name: Type check
+        run: npm run tsc --noEmit
+        continue-on-error: false
+
+      - name: Run tests
+        run: npm test -- --watchAll=false --passWithNoTests
+        continue-on-error: false
+
+      - name: Build
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # or ./dist if you're using Webpack
+          publish_dir: ./build
