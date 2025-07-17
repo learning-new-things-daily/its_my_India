@@ -8,6 +8,7 @@ const Economy: React.FC = () => (
       <li>Major industries: IT, textiles, agriculture, pharmaceuticals, steel, automotive.</li>
       <li>Major exports: Petroleum products, gems and jewelry, textiles, machinery, chemicals.</li>
       <li>Currency: Indian Rupee (INR)</li>
+      <li>India&apos;s economy is growing rapidly.</li>
     </ul>
   </Section>
 );
