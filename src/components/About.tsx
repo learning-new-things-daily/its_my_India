@@ -9,18 +9,35 @@ const aboutContent = {
   hi: "भारत, आधिकारिक रूप से भारत गणराज्य, दक्षिण एशिया में स्थित एक देश है..."
 };
 
+const wikiLinks = {
+  en: "https://en.wikipedia.org/wiki/India",
+  hi: "https://hi.wikipedia.org/wiki/भारत"
+};
+
+const headings = {
+  en: "About India",
+  hi: "भारत के बारे में"
+};
+
 const About: React.FC<AboutProps> = ({ lang }) => (
   <div>
-    <h2>{lang === "en" ? "About India" : "भारत के बारे में"}</h2>
+    <h2>
+      <a
+        href={wikiLinks[lang]}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: "none", color: "inherit" }} // Optional: makes it look like a heading
+      >
+        {headings[lang]}
+      </a>
+    </h2>
     <p>{aboutContent[lang]}</p>
     <a
-      href={lang === "en"
-        ? "https://en.wikipedia.org/wiki/India"
-        : "https://hi.wikipedia.org/wiki/भारत"}
+      href={wikiLinks[lang]}
       target="_blank"
       rel="noopener noreferrer"
     >
-      {lang === "en" ? "Read more on Wikipedia" : "विकिपीडिया पर और पढ़ें"}
+      {/* {lang === "en" ? "Read more on Wikipedia" : "विकिपीडिया पर और पढ़ें"} */}
     </a>
   </div>
 );
