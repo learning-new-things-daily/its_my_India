@@ -5,52 +5,77 @@ import Geography from "./components/Geography";
 import Culture from "./components/Culture";
 import Landmarks from "./components/Landmarks";
 import FastFacts from "./components/FastFacts";
-import News from "./components/News";
+// import News from "./components/News";
 import Economy from "./components/Economy";
 import Languages from "./components/Languages";
 
 const NAV_ITEMS = [
-  { id: "about", label: "About" },
-  { id: "geography", label: "Geography" },
-  { id: "culture", label: "Culture & Traditions" },
-  { id: "landmarks", label: "Landmarks" },
-  { id: "fastfacts", label: "Fast Facts" },
-  { id: "economy", label: "Economy" },
-  { id: "languages", label: "Languages" },
-  { id: "news", label: "News" }
+  { id: "about", label: "📖 About" },
+  { id: "geography", label: "🗺️ Geography" },
+  { id: "culture", label: "🎭 Culture & Traditions" },
+  { id: "landmarks", label: "🏯 Landmarks" },
+  { id: "fastfacts", label: "⚡ Fast Facts" },
+  { id: "economy", label: "💰 Economy" },
+  { id: "languages", label: "🗣️ Languages" },
+  { id: "news", label: "📰 News" }
 ];
 
 const content = {
   en: {
-    title: "It's My India",
-    description: "Welcome to a colorful and diverse nation. Explore the beauty, culture, and heritage of India!"
+    title: "🇮🇳 It's My India",
+    description: "Welcome to a colorful, vibrant nation. Explore the beauty, stories, and spirit of India!"
   },
   hi: {
-    title: "मेरा भारत",
-    description: "एक रंगीन और विविध देश में आपका स्वागत है। भारत की सुंदरता, संस्कृति और विरासत का अन्वेषण करें!"
+    title: "🇮🇳 मेरा भारत",
+    description: "एक रंगीन और जीवंत देश में आपका स्वागत है। भारत की सुंदरता, कहानियाँ और आत्मा को जानें!"
   }
 };
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<'en' | 'hi'>('en');
-  const newsApiKey = ""; // Add your NewsAPI key if needed
+  // const newsApiKey = ""; // Add NewsAPI key if needed
+
+  const scrollTo = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div className="container">
       <header>
-        <h1>{content[lang].title} 🇮🇳</h1>
-        <nav>
+        <h1 className="main-title">{content[lang].title}</h1>
+        <p className="subtitle">{content[lang].description}</p>
+
+        <nav className="nav-bar">
           {NAV_ITEMS.map(item => (
-            <a key={item.id} href={`#${item.id}`}>
+            <button
+              key={item.id}
+              onClick={() => scrollTo(item.id)}
+              className="nav-button"
+            >
               {item.label}
-            </a>
+            </button>
           ))}
         </nav>
+
         <div className="language-toggle">
-          <button onClick={() => setLang('en')}>English</button>
-          <button onClick={() => setLang('hi')}>हिन्दी</button>
+          <button
+            onClick={() => setLang('en')}
+            className={lang === 'en' ? "active-lang" : ""}
+          >
+            🇬🇧 English
+          </button>
+          <button
+            onClick={() => setLang('hi')}
+            className={lang === 'hi' ? "active-lang" : ""}
+          >
+            🇮🇳 हिन्दी
+          </button>
         </div>
       </header>
+
       <main>
         <section id="about"><About lang={lang} /></section>
         <section id="geography"><Geography lang={lang} /></section>
@@ -59,10 +84,13 @@ const App: React.FC = () => {
         <section id="fastfacts"><FastFacts lang={lang} /></section>
         <section id="economy"><Economy lang={lang} /></section>
         <section id="languages"><Languages lang={lang} /></section>
-        <section id="news"><News apiKey={newsApiKey} lang={lang} /></section>
+        {/* <section id="news"><News apiKey={newsApiKey} lang={lang} /></section> */}
       </main>
+
       <footer>
-        <small>Data from restcountries.com &amp; newsapi.org &mdash; Expandable &amp; open source</small>
+        <small>
+          🌍 Powered by <a href="https://restcountries.com" target="_blank" rel="noopener noreferrer">restcountries</a> &amp; <a href="https://newsapi.org" target="_blank" rel="noopener noreferrer">NewsAPI</a> — Built with ❤️, open source & expandable 🚀
+        </small>
       </footer>
     </div>
   );

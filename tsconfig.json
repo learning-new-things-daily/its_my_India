@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "esnext",
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -10,5 +12,5 @@
     "skipLibCheck": true,
     "outDir": "build"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "scripts"]
 }

@@ -1,42 +1,27 @@
-/* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Section from "./Section";
+import newsData from "../data/news.json";
 
 type NewsArticle = { title: string; url: string };
+const articles: NewsArticle[] = newsData;
+
 type NewsProps = {
-  apiKey: string;
   lang: "en" | "hi";
 };
 
-const News: React.FC<NewsProps> = ({ apiKey, lang }) => {
-  const [articles, setArticles] = useState<NewsArticle[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+const News: React.FC<NewsProps> = ({ lang }) => {
+  if (!newsData || newsData.length === 0) {
+    return (
+      <Section title={lang === "hi" ? "ताज़ा समाचार" : "Latest News"}>
+        <p>{lang === "hi" ? "कोई समाचार नहीं मिला।" : "No news available."}</p>
+      </Section>
+    );
+  }
 
-  useEffect(() => {
-    if (!apiKey) return;
-    setLoading(true);
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&pageSize=5&apiKey=${apiKey}`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        setArticles(res.articles || []);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError(true);
-        setLoading(false);
-      });
-  }, [apiKey]);
-
-  if (!apiKey) return null;
   return (
     <Section title={lang === "hi" ? "ताज़ा समाचार" : "Latest News"}>
-      {loading && <p>{lang === "hi" ? "लोड हो रहा है..." : "Loading..."}</p>}
-      {error && <p>{lang === "hi" ? "समाचार उपलब्ध नहीं है।" : "News unavailable."}</p>}
       <ul>
-        {articles.map((a, i) => (
+        {articles.map((a: NewsArticle, i: number) => (
           <li key={i}>
             <a href={a.url} target="_blank" rel="noopener noreferrer">
               {a.title}

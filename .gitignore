@@ -22,3 +22,6 @@ yarn-error.log*
 .idea/
 *.sublime-workspace
 *.sublime-project
+
+
+/src/data/news.json
