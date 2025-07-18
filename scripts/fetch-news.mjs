@@ -1,11 +1,9 @@
-// scripts/fetch-news.mjs
 import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
-// Needed because __dirname is not available in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -20,9 +18,6 @@ const URL = `https://newsapi.org/v2/everything?q=india&pageSize=5&sortBy=publish
 try {
   const res = await fetch(URL);
   const json = await res.json();
-
-  // 🔍 Debug full response
-  console.log("🧾 NewsAPI Response:\n", JSON.stringify(json, null, 2));
 
   const articles = json.articles?.map((a) => ({
     title: a.title,
