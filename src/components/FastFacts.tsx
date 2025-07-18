@@ -78,6 +78,7 @@ const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
     <Section title="Fast Facts">
       {loading && <p>Loading...</p>}
       {error && <p>Data unavailable. Please try again later.</p>}
+      
       {data && (
         <div className="fast-facts">
           <img src={data.flags.svg} alt="India Flag" className="flag" />
@@ -119,6 +120,7 @@ const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
           </ul>
         </div>
       )}
+
       <div>
         <h2>{lang === "en" ? "Fast Facts" : "त्वरित तथ्य"}</h2>
         <ul>
@@ -127,16 +129,25 @@ const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
           ))}
         </ul>
       </div>
+
       <div>
         <h2>{lang === "en" ? "National Symbols" : "राष्ट्रीय प्रतीक"}</h2>
         <ul>
           {nationalSymbols[lang].map((symbol, idx) => (
             <li key={idx}>
-              <strong>{symbol.label}:</strong> {symbol.value}
+              <strong>{symbol.label}:</strong>{" "}
+              <a
+                href={symbol.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {symbol.value}
+              </a>
             </li>
           ))}
         </ul>
       </div>
+
       <div>
         <h2>{lang === "en" ? "Festivals" : "त्योहार"}</h2>
         <ul>
