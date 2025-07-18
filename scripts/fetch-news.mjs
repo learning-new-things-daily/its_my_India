@@ -15,15 +15,18 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-const URL = `https://newsapi.org/v2/top-headlines?country=in&pageSize=5&apiKey=${API_KEY}`;
+const URL = `https://newsapi.org/v2/everything?q=india&pageSize=5&sortBy=publishedAt&apiKey=${API_KEY}`;
 
 try {
   const res = await fetch(URL);
   const json = await res.json();
 
-  const articles = json.articles?.map(a => ({
+  // 🔍 Debug full response
+  console.log("🧾 NewsAPI Response:\n", JSON.stringify(json, null, 2));
+
+  const articles = json.articles?.map((a) => ({
     title: a.title,
-    url: a.url
+    url: a.url,
   })) || [];
 
   const outputPath = path.resolve(__dirname, "../src/data/news.json");
