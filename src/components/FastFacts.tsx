@@ -61,11 +61,11 @@ const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
 
   useEffect(() => {
     fetch(
-      "https://restcountries.com/v3.1/name/india?fields=population,region,area,flags,capital,subregion,timezones,currencies,languages"
+      "https://restcountries.com/v3.1/alpha/IN?fields=population,region,area,flags,capital,subregion,timezones,currencies,languages"
     )
       .then((res) => res.json())
       .then((res) => {
-        setData(res[0]);
+        setData(res);
         setLoading(false);
       })
       .catch(() => {
