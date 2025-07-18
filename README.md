@@ -1,4 +1,5 @@
 # 🇮🇳 It's My India
+![Preview](public/preview.png)
 
 A modular, responsive React + TypeScript web app that highlights India's geography, culture, economy, languages, and current news.
 
