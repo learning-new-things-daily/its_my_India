@@ -113,20 +113,20 @@ const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
               <Clock className="inline-icon" /> <strong>Timezones:</strong> {data.timezones.join(", ")}
             </li>
             <li>
-              <strong>Currencies:</strong>{" "}
+              <Banknote className="inline-icon" /> <strong>Currencies:</strong>{" "}
               {Object.values(data.currencies)
                 .map((c) => `${c.name} (${c.symbol})`)
                 .join(", ")}
             </li>
             <li>
-              <strong>Languages:</strong>{" "}
+              <Languages className="inline-icon" /> <strong>Languages:</strong>{" "}
               {Object.values(data.languages).join(", ")}
             </li>
             <li>
-              <strong>Calling Code:</strong> +91
+              <Phone className="inline-icon" /> <strong>Calling Code:</strong> +91
             </li>
             <li>
-              <strong>Internet TLD:</strong> .in
+              <Globe className="inline-icon" /> <strong>Internet TLD:</strong> .in
             </li>
           </ul>
         </div>
