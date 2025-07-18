@@ -24,4 +24,4 @@ yarn-error.log*
 *.sublime-project
 
 
-/src/data/news.json
+# /src/data/news.json
