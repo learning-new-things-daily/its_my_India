@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Section from "./Section";
+import {
+  Map,
+  Ruler,
+  Clock,
+  Users,
+  Landmark,
+  Banknote,
+  Languages,
+  Phone,
+  Globe
+} from "lucide-react";
 
 type CountryData = {
   population: number;
@@ -84,22 +95,22 @@ const FastFacts: React.FC<FastFactsProps> = ({ lang }) => {
           <img src={data.flags.svg} alt="India Flag" className="flag" />
           <ul>
             <li>
-              <strong>Population:</strong> {data.population.toLocaleString()}
+              <Users className="inline-icon" /> <strong>Population:</strong> {data.population.toLocaleString()}
             </li>
             <li>
-              <strong>Region:</strong> {data.region}
+              <Map className="inline-icon" /> <strong>Region:</strong> {data.region}
             </li>
             <li>
-              <strong>Subregion:</strong> {data.subregion}
+              <Map className="inline-icon" /> <strong>Subregion:</strong> {data.subregion}
             </li>
             <li>
-              <strong>Area:</strong> {data.area.toLocaleString()} km²
+              <Ruler className="inline-icon" /> <strong>Area:</strong> {data.area.toLocaleString()} km²
             </li>
             <li>
-              <strong>Capital:</strong> {data.capital?.join(", ")}
+              <Landmark className="inline-icon" /> <strong>Capital:</strong> {data.capital?.join(", ")}
             </li>
             <li>
-              <strong>Timezones:</strong> {data.timezones.join(", ")}
+              <Clock className="inline-icon" /> <strong>Timezones:</strong> {data.timezones.join(", ")}
             </li>
             <li>
               <strong>Currencies:</strong>{" "}
