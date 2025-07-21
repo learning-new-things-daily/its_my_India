@@ -15,15 +15,14 @@ const News: React.FC<NewsProps> = ({ lang }) => {
 
   useEffect(() => {
     import("../data/news.json")
-      .then((data) => {
-        setArticles(data.default);
-      })
+      .then((data) => setArticles(data.default))
       .catch((err) => {
         console.error("❌ Could not load news.json", err);
+        setArticles([]); // fallback
       });
   }, []);
 
-  if (!articles || articles.length === 0) {
+  if (articles.length === 0) {
     return (
       <Section title={lang === "hi" ? "ताज़ा समाचार" : "Latest News"}>
         <p>{lang === "hi" ? "कोई समाचार नहीं मिला।" : "No news available."}</p>
@@ -33,14 +32,14 @@ const News: React.FC<NewsProps> = ({ lang }) => {
 
   return (
     <Section title={lang === "hi" ? "ताज़ा समाचार" : "Latest News"}>
-      <ul className="list-disc pl-5">
-        {articles.map((article, i) => (
-          <li key={i}>
+      <ul className="list-disc pl-5 space-y-2">
+        {articles.map((article, index) => (
+          <li key={index}>
             <a
               href={article.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline"
+              className="text-blue-600 underline hover:text-blue-800"
             >
               {article.title}
             </a>

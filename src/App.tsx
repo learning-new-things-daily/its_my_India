@@ -5,7 +5,7 @@ import Geography from "./components/Geography";
 import Culture from "./components/Culture";
 import Landmarks from "./components/Landmarks";
 import FastFacts from "./components/FastFacts";
-// import News from "./components/News";
+import News from "./components/News";
 import Economy from "./components/Economy";
 import Languages from "./components/Languages";
 
@@ -84,7 +84,7 @@ const App: React.FC = () => {
         <section id="fastfacts"><FastFacts lang={lang} /></section>
         <section id="economy"><Economy lang={lang} /></section>
         <section id="languages"><Languages lang={lang} /></section>
-        {/* <section id="news"><News apiKey={newsApiKey} lang={lang} /></section> */}
+        <section id="news"><News lang={lang} /></section>
       </main>
 
       <footer>
