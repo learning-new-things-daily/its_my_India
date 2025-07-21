@@ -119,10 +119,3 @@ its_my_India/
 MIT © 2025 \[Mukul Joshi]
 
 ```
-
----
-
-Let me know if:
-- You want badges (build status, license, version, etc.)
-- You want it rewritten in minimal/compact format
-- You want the README to include screenshots or usage GIFs
