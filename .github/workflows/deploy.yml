@@ -6,6 +6,8 @@ on:
       - master
   schedule:
     - cron: '0 */12 * * *' # Every 12 hours
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
