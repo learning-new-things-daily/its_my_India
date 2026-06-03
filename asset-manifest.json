@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/its_my_India/static/css/main.4687c8b2.css",
-    "main.js": "/its_my_India/static/js/main.bbb4f201.js",
-    "static/js/25.bcda68f6.chunk.js": "/its_my_India/static/js/25.bcda68f6.chunk.js",
+    "main.js": "/its_my_India/static/js/main.287a91ea.js",
+    "static/js/25.2d9c6353.chunk.js": "/its_my_India/static/js/25.2d9c6353.chunk.js",
     "index.html": "/its_my_India/index.html",
     "main.4687c8b2.css.map": "/its_my_India/static/css/main.4687c8b2.css.map",
-    "main.bbb4f201.js.map": "/its_my_India/static/js/main.bbb4f201.js.map"
+    "main.287a91ea.js.map": "/its_my_India/static/js/main.287a91ea.js.map"
   },
   "entrypoints": [
     "static/css/main.4687c8b2.css",
-    "static/js/main.bbb4f201.js"
+    "static/js/main.287a91ea.js"
   ]
 }
